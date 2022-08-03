@@ -20,28 +20,32 @@ namespace ByteBank.Contas {
             QuantidadeDeContas++;
         }
 
-        internal string Conta { get => _conta;
+        internal string Conta { 
+            get => _conta;
             set {
                 if (Regex.IsMatch(value, @"/^[0-9]{4}-[0-9a-zA-Z]{1}$/"))
                     _conta = value;
             }
         }
 
-        internal string NomeDaAgencia { get => _nomeDaAgencia;
+        internal string NomeDaAgencia { 
+            get => _nomeDaAgencia;
             set {
                 if (value.Length >= 3)
                     _nomeDaAgencia = value;
             }
         }
 
-        internal string NumeroDaAgencia { get => _numeroDaAgencia;
+        internal string NumeroDaAgencia { 
+            get => _numeroDaAgencia;
             set {
                 if (Regex.IsMatch(value, @"/^[0-9]{4}$/"))
                     _numeroDaAgencia = value;
             }
         }
 
-        internal double Saldo { get => _saldo;
+        internal double Saldo { 
+            get => _saldo;
             set {
                 if (value >= 0)
                     _saldo = value;

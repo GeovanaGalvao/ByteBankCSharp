@@ -1,12 +1,28 @@
 ﻿using ByteBank.Usuarios;
 
 namespace ByteBank.Funcionarios {
-    internal class Funcionario : Pessoa {
+    internal abstract class Funcionario : Pessoa {
 
-        internal Funcionario(string nome, string cpf, double salario) : base(nome, cpf) { Salario = salario; }
-        internal double Salario { get; set; }
+        private double _salario;
+        internal static int TotalDeFuncionarios { get; private set; }
 
-        internal virtual double Bonificacao() => Salario * 0.1;
+        internal Funcionario(string nome, string cpf, double salario) : base(nome, cpf) {
+            _salario = salario;
+            TotalDeFuncionarios++;
+        }
+
+        internal double Salario {
+            get => _salario;
+            set {
+                if (value <= 1212.00 || value > 100000.00)
+                    Console.WriteLine("\nValor Inválido!");
+                else _salario = value;
+            }
+        }
+
+        internal abstract void AumentarSalario();
+
+        internal abstract double Bonificacao();
 
         public override string ToString() => base.ToString() + "\nSalario: " + Salario;
     }

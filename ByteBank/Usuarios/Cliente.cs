@@ -11,7 +11,8 @@ namespace ByteBank {
             _idade = idade;
         }
 
-        internal string Genero { get => _genero;
+        internal string Genero { 
+            get => _genero;
             set {
                 if (value != "M" || value != "F") {
                     Console.WriteLine("\nGenero Inválido!");
@@ -20,7 +21,8 @@ namespace ByteBank {
             }
         }
 
-        internal string Profissao { get => _profissao;
+        internal string Profissao { 
+            get => _profissao;
             set {
                 if (value == null || value == "") {
                     Console.WriteLine("\nProfissão Inválida!");
@@ -29,7 +31,8 @@ namespace ByteBank {
             }
         }
 
-        internal int Idade { get => _idade;
+        internal int Idade { 
+            get => _idade;
             set {
                 if (!int.TryParse(Console.ReadLine(), out value) || value < 18 || value > 120) {
                     Console.WriteLine("\nIdade inválida!");
