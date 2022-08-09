@@ -14,7 +14,7 @@ namespace ByteBank.Usuarios {
         internal string Nome {
             get => _nome;
             set {
-                if (value == null || value == "")
+                if (value == null || value == "" || value.Length < 3)
                     Console.WriteLine("\nNome Inválido!");
                 else _nome = value;
             }
